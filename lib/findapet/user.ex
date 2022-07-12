@@ -38,7 +38,7 @@ defmodule Findapet.User do
     |> validate_number(:age, greater_than_or_equal_to: 18)
     |> validate_length(:phone_number, greater_than: 10)
     |> validate_length(:cpf, is: 11)
-    |> validate_length(:password, greater_than: 6)
+    |> validate_length(:password, min: 6)
     |> validate_format(:email, ~r/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)
     |> unique_constraint([:email])
     |> unique_constraint([:cpf])

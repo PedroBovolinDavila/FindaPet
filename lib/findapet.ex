@@ -8,6 +8,7 @@ defmodule Findapet do
   alias Findapet.Pets.Create, as: CreatePet
   alias Findapet.Pets.Delete, as: DeletePet
   alias Findapet.Pets.Get, as: GetPet
+  alias Findapet.Pets.Update, as: UpdatePet
 
   defdelegate create_user(params), to: CreateUser, as: :call
   defdelegate update_user(params), to: UpdateUser, as: :call
@@ -19,6 +20,7 @@ defmodule Findapet do
 
   defdelegate create_pet(params), to: CreatePet, as: :call
   defdelegate delete_pet(id), to: DeletePet, as: :call
+  defdelegate update_pet(params), to: UpdatePet, as: :call
   defdelegate get_pets(), to: GetPet, as: :call
   defdelegate get_pet_by_id(id), to: GetPet, as: :by_id
   defdelegate get_pet_by_user_id(id), to: GetPet, as: :by_user_id

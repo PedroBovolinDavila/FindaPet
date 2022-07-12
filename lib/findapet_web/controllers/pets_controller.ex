@@ -45,4 +45,12 @@ defmodule FindapetWeb.PetsController do
       |> text("")
     end
   end
+
+  def update(conn, params) do
+    with {:ok, %Pet{} = pet} <- Findapet.update_pet(params) do
+      conn
+      |> put_status(:ok)
+      |> render("update.json", pet: pet)
+    end
+  end
 end

@@ -13,4 +13,11 @@ defmodule FindapetWeb.PetsView do
       pet: pet
     }
   end
+
+  def render("update.json", %{pet: %Pet{} = pet}) do
+    %{
+      message: "Pet updated!",
+      pet: pet
+    }
+  end
 end
